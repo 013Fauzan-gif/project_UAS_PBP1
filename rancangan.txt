@@ -1,0 +1,22 @@
+Fitur:
+1. Chekout
+2. search (kalau dipencet ke shop)
+3. Review (comment,rating)
+4. item (barang yg dijual)
+5. Notifikasi
+6. Riwayat
+
+Page: 
+1. dashboard
+2. Shop
+3. detail Produk
+4. Keranjang
+5. Riwayat
+6. detail akun
+7. Notifikasi
+8. Status Pesanan (Dikemas, Dikirim, Diterima)
+
+Database:
+1. Akun (Username, ID_akun, password, email, no-telp, alamat)
+2. Produk (Id_produk, nama_produk, stok, Harga, deskripsi, gambar, ukuran, warna, rating)
+3. Review (Rating, Komentar, id_akun, id_Produk)
