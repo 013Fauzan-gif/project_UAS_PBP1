@@ -156,28 +156,25 @@
         select.style.display = select.style.display === "block" ? "none" : "block";
     });
 
-    // Update country text
+    // Update country
     select.addEventListener("change", () => {
         current.textContent = select.options[select.selectedIndex].text;
         select.style.display = "none";
     });
 
-    // Filter allowed characters in email input
+    // Allowed characters only
     emailInput.addEventListener("input", () => {
         emailInput.value = emailInput.value.replace(/[^a-zA-Z0-9@._]/g, "");
     });
 
+    // Email validation rule
     function isValidEmail(email) {
-        // RULE:
-        // 1+ chars before @
-        // 1+ chars after @
-        // dot exists after that part
-        // 1+ chars after dot
         const regex = /^[A-Za-z0-9._]+@[A-Za-z0-9_]+\.[A-Za-z0-9_]+$/;
         return regex.test(email);
     }
 
-    continueBtn.addEventListener("click", () => {
+    // MAIN LOGIC (shared by Enter + Continue button)
+    function submitEmail() {
         const email = emailInput.value.trim();
 
         if (email === "" || !isValidEmail(email)) {
@@ -187,10 +184,21 @@
             return;
         }
 
-        // valid → go to register page
         window.location.href = "register.html";
+    }
+
+    // Click continue
+    continueBtn.addEventListener("click", submitEmail);
+
+    // PRESS ENTER → trigger submitEmail()
+    emailInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault(); 
+            submitEmail();
+        }
     });
 </script>
+
 
 </body>
 </html>
