@@ -49,7 +49,12 @@ Page:
 
         + Description : "Inspired by the original that debuted in 1985, the Air Jordan 1 Low offers a clean, classic look that's familiar yet always fresh. With an iconic design that pairs perfectly with any 'fit, these kicks ensure you'll always be on point."
 
-        +         
+        + Benefits :
+            - Encapsulated Air-Sole unit provides lightweight cushioning.
+            - Genuine leather in the upper offers durability and a premium look.
+            - Solid rubber outsole enhances traction on a variety of surfaces.
+
+        
 
 
 4. Keranjang
