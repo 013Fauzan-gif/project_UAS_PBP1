@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nike Product Detail</title>
+
+    <style>
+        .active-size {
+            background-color: black !important;
+            color: white !important;
+            border-color: black !important;
+        }
+
+        .selected-color {
+            border: 3px solid black !important;
+            background-color: rgba(156, 163, 175, 0.3) !important;
+            /* gray-400 with 30% opacity */
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-black">
+
+    <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <!-- LEFT IMAGE GALLERY -->
+        <div class="flex gap-4">
+            <!-- THUMBNAIL CONTAINER (dinamis) -->
+            <div id="thumbnailContainer" class="flex flex-col gap-3">
+                <!-- JS akan mengisi thumbnail di sini -->
+            </div>
+
+            <!-- Main Image -->
+            <div class="flex-1">
+                <img id="mainImage" src="../image/AIR+FORCE+1+'07+LV8.png"
+                    class="rounded shadow object-cover w-full bg-gray-200">
+            </div>
+        </div>
+
+
+        <!-- RIGHT PRODUCT INFO -->
+        <div class="pr-6">
+
+            <p class="text-sm text-gray-600 mb-1">Men's Shoe</p>
+            <h1 class="text-3xl font-semibold mb-1">Nike Air Force 1 '07 LV8</h1>
+            <p class="text-xl font-semibold">Rp 1.909.000</p>
+
+            <!-- COLOR SELECTOR -->
+            <p class="text-sm text-gray-600 mt-4 mb-2">2 Colours</p>
+            <!-- COLOR SELECTOR -->
+            <div class="flex gap-4 mb-6">
+                <!-- Warna 1 (ochre) -->
+                <img src="../image/AIR+FORCE+1+'07+LV8.png" class="color-btn w-24 rounded cursor-pointer selected-color"
+                    data-main="../image/AIR+FORCE+1+'07+LV8.png" data-thumb1="../image/AIR+FORCE+1+'07+LV8 (1).png"
+                    data-thumb2="../image/AIR+FORCE+1+'07+LV8 (2).png"
+                    data-thumb3="../image/AIR+FORCE+1+'07+LV8 (3).png"
+                    data-thumb4="../image/AIR+FORCE+1+'07+LV8 (4).png" data-color="Desert Ochre/Black/Desert Ochre"
+                    data-style="HQ1966-700" />
+
+                <!-- Warna 2 (white) -->
+                <img src="../image/lv8 white.jpeg" class="color-btn w-24 rounded cursor-pointer"
+                    data-main="../image/lv8 white.jpeg" data-thumb1="../image/AIR+FORCE+1+'07+LV8 white (1).png"
+                    data-thumb2="../image/AIR+FORCE+1+'07+LV8 white (2).png"
+                    data-thumb3="../image/AIR+FORCE+1+'07+LV8 white (3).png"
+                    data-thumb4="../image/AIR+FORCE+1+'07+LV8 white (4).png"
+                    data-color="Light Smoke Grey/Black/Light Smoke Grey" data-style="HQ1966-001" />
+            </div>
+
+
+
+            <div class="flex items-center justify-between mb-2">
+                <p class="font-medium">Select Size</p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 mb-6">
+                <button class="size-btn border py-3 rounded hover:border-black">EU 38</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 39</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 40</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 41</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 42</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 43</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 44</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 45</button>
+                <button class="size-btn border py-3 rounded hover:border-black">EU 46</button>
+            </div>
+
+            <script>
+                const sizeButtons = document.querySelectorAll('.size-btn');
+
+                sizeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        sizeButtons.forEach(b => b.classList.remove('active-size'));
+                        btn.classList.add('active-size');
+                    });
+                });
+            </script>
+
+
+            <button class="w-full bg-black text-white py-4 rounded-full mb-3 hover:bg-gray-900">
+                Add to Bag
+            </button>
+
+            <button id="favBtn" class="w-full border py-4 rounded-full mb-8 hover:bg-gray-100">
+                Favourite <span id="heart">♡</span>
+            </button>
+
+            <p class="text-gray-700 leading-relaxed mb-6">
+                Comfortable, durable and timeless – it’s number one for a reason.
+                This edition puts a fresh twist on the classic with hydrated suede overlays
+                and heritage style. Step into a legend.
+            </p>
+
+            <ul class="list-disc ml-6 text-gray-700 mb-6">
+                <p class="font-bold">Benefits</p>
+                <li>The suede upper with a perforated toe box is breathable and comfortable.</li>
+                <li>Originally designed for performance hoops, Nike Air cushioning adds lightweight, all-day comfort.
+                </li>
+                <li>The rubber outsole with heritage hoops pivot circles delivers traction and durability.</li>
+                <br>
+                <p class="font-bold">Product Details</p>
+                <li>Padded collar</li>
+                <li>Foam midsole</li>
+                <li id="colorShown">Color Shown: Desert Ochre/Black/Desert Ochre</li>
+                <li id="styleCode">Style: HQ1966-700</li>
+                <li>Country/Region of Origin: Vietnam</li>
+            </ul>
+
+            <div class="border-t pt-4">
+                <button class="w-full flex justify-between items-center py-3 text-left font-semibold">
+                    Reviews (17)
+                    <span>▾</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- === JAVASCRIPT UNTUK GANTI GAMBAR, THUMBNAIL, WARNA, DAN FAVOURITE === -->
+    <script>
+        /* -------- select elements -------- */
+        const colorBtns = document.querySelectorAll(".color-btn");
+        const mainImg = document.getElementById("mainImage");
+        const thumbnailContainer = document.getElementById("thumbnailContainer");
+        const colorShownText = document.getElementById("colorShown");
+        const styleCodeText = document.getElementById("styleCode");
+        const favBtn = document.getElementById("favBtn");
+        const heart = document.getElementById("heart");
+
+        /* -------- helper: collect thumbs from attributes -------- */
+        function collectThumbsFromBtn(btn) {
+            // data-thumb1..data-thumb4 (ambil jika ada)
+            const thumbs = [];
+            for (let i = 1; i <= 8; i++) { // support up to 8 thumbs if dibutuhkan
+                const key = 'thumb' + i;
+                const v = btn.dataset[key];
+                if (v && v.trim() !== '') thumbs.push(v);
+            }
+            return thumbs;
+        }
+
+        /* -------- update thumbnails DOM -------- */
+        function updateThumbnails(thumbArray) {
+            thumbnailContainer.innerHTML = ""; // kosongkan dulu
+            thumbArray.forEach(src => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.className = "thumbnail w-24 rounded cursor-pointer hover:opacity-80 bg-gray-200";
+                img.addEventListener("click", () => mainImg.src = src);
+                thumbnailContainer.appendChild(img);
+            });
+        }
+
+        /* -------- color button click handler -------- */
+        colorBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // highlight
+                colorBtns.forEach(b => b.classList.remove("selected-color"));
+                btn.classList.add("selected-color");
+
+                // ganti main
+                if (btn.dataset.main) mainImg.src = btn.dataset.main;
+
+                // collect thumbs and update
+                const thumbs = collectThumbsFromBtn(btn);
+                if (thumbs.length) updateThumbnails(thumbs);
+
+                // update texts
+                if (colorShownText) colorShownText.textContent = "Color Shown: " + (btn.dataset.color || "");
+                if (styleCodeText) styleCodeText.textContent = "Style: " + (btn.dataset.style || "");
+            });
+        });
+
+        /* -------- initialize: pilih warna pertama jika ada -------- */
+        const firstColor = document.querySelector(".color-btn.selected-color") || document.querySelector(".color-btn");
+        if (firstColor) {
+            // trigger a click programmatically to populate thumbnails + main image + texts
+            firstColor.click();
+        }
+
+        /* -------- favourite button -------- */
+        if (favBtn && heart) {
+            favBtn.addEventListener("click", () => {
+                heart.textContent = heart.textContent === "♡" ? "❤️" : "♡";
+            });
+        }
+    </script>
+
+</body>
+
+</html>
