@@ -176,9 +176,14 @@
 
         // RECOMMENDATION PRODUCTS
         const recommendations = [
-            { img: "", name: "Nike SB Malor TE", price: "Rp 1.149.000" },
-            { img: "rec2.png", name: "Kobe 9 Low", price: "Rp 2.849.000" },
-            { img: "rec3.png", name: "Nike SB Janoski+ Slip", price: "Rp 1.299.000" },
+            { img: "../image/sb-blazer-low-pro-gt-shoes-ZpVNV6.jpeg", name: "Nike SB Blazer Low Pro GT", type: "Men's Shoes", price: "Rp 959.200" },
+            { img: "../image/sb-malor-te-shoes-dFgpng.jpeg", name: "Nike SB Malor TE", type: "Men's Shoes", price: "Rp 1.149.000" },
+            { img: "../image/kobe-9-low-basketball-shoes-Up4tSTpB.jpeg", name: "Kobe 9 Low", type: "Basketball Shoes", price: "Rp 2.849.000" },
+            { img: "../image/sb-dunk-low-pro-skate-shoes-hTqg2m.jpeg", name: "Nike SB Dunk Low Pro", type: "Skate Shoes", price: "Rp 1.378.000" },
+            { img: "../image/sb-janoski-slip-skate-shoes-BxN7w6.jpeg", name: "Nike SB Janoski+ Slip", type: "Skate Shoes", price: "Rp 1.299.000" },
+            { img: "../image/sb-malor-shoes-BZKPwR.jpeg", name: "Nike SB Malor", type: "Men's Shoes", price: "Rp 1.149.000" },
+            { img: "../image/kobe-9-low-basketball-shoes-Up4tSTpB.jpeg", name: "Kobe 9 Low", type: "Basketball Shoes", price: "Rp 2.849.000" },
+            { img: "../image/kobe-9-low-basketball-shoes-Up4tSTpB.jpeg", name: "Kobe 9 Low", type: "Basketball Shoes", price: "Rp 2.849.000" },
         ];
 
         const recScroll = document.getElementById("recommendScroll");
@@ -188,7 +193,8 @@
             card.className = "min-w-[250px] border rounded-xl p-3 shadow-sm bg-white";
             card.innerHTML = `
                 <img src="${r.img}" class="w-full rounded-lg">
-                <p class="font-semibold mt-2">${r.name}</p>
+                <p class="font-bold mt-2">${r.name}</p>
+                <p class="mt-2">${r.type}</p>
                 <p class="text-gray-600">${r.price}</p>
             `;
             recScroll.appendChild(card);
